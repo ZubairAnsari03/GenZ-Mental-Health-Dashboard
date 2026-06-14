@@ -30,7 +30,7 @@ df = load_data()
 
 @st.cache_resource
 def load_model():
-    return joblib.load("burnout_model.pkl")
+    return joblib.load("models/burnout_model.pkl")
 
 try:
     model = load_model()
