@@ -300,24 +300,16 @@ input_data = pd.DataFrame([{
 }])
 
 if model_loaded:
+    prediction = model.predict(input_data)[0]
 
-    if st.sidebar.button("Predict Burnout"):
-
-        prediction = model.predict(input_data)[0]
-
-        if prediction == 0:
-            st.error("🔴 High Burnout")
-
-        elif prediction == 1:
-            st.success("🟢 Low Burnout")
-
-        else:
-            st.warning("🟡 Medium Burnout")
-
+    if prediction == 0:
+        st.error("🔴 High Burnout")
+    elif prediction == 1:
+        st.success("🟢 Low Burnout")
+    else:
+        st.warning("🟡 Medium Burnout")
 else:
-    st.warning(
-        "burnout_model.pkl not found. Train and save the model first."
-    )
+    st.warning("models/burnout_model.pkl not found.")
 
 # =========================
 # RULE BASED RISK SCORE
