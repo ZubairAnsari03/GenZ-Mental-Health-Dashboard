@@ -217,6 +217,6 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 venv/
+
 *.pkl
-*.pkl
-*.pkl
+venv/
